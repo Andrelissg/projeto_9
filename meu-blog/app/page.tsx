@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div>
@@ -5,14 +7,19 @@ export default function Home() {
         Meu Blog Pessoal
       </h1>
       <p className="text-lg">
-        Bem-vindo ao meu blog! Em breve teremos posts incríveis aqui.
+        Bem-vindo ao meu blog! Aqui está meu primeiro post:
       </p>
 
-      <div className="mt-8 p-4 bg-green-100 rounded-lg">
+      <div className="mt-6 p-4 bg-green-100 rounded-lg">
         <h2 className="text-xl font-semibold mb-2">
-          Primeiros Posts em Breve!
+          <Link
+            href="/posts/primeiro-post"
+            className="text-green-700 hover:underline"
+          >
+            Meu Primeiro Post
+          </Link>
         </h2>
-        <p>Estamos preparando conteúdo especial para você.</p>
+        <p>Um pouco sobre minha experiência aprendendo Next.js</p>
       </div>
     </div>
   );
