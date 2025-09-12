@@ -1,4 +1,4 @@
-"use client"; // IMPORTANTE: Esta linha deve estar no topo
+"use client";
 
 import { useState } from "react";
 
@@ -8,9 +8,10 @@ export default function LikeButton() {
   return (
     <button
       onClick={() => setLikes(likes + 1)}
-      className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md mt-4"
+      className="flex items-center space-x-2 bg-gradient-to-r from-metal-light to-metal-medium text-white px-6 py-3 rounded-xl transition-all duration-300 hover:from-metal-medium hover:to-metal-dark hover:shadow-lg"
     >
-      Curtir ({likes})
+      <span className="text-lg">👍</span>
+      <span>Curtir ({likes})</span>
     </button>
   );
 }
