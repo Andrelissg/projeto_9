@@ -1,25 +1,19 @@
-import Link from "next/link";
+import PostCard from "@/components/PostCard";
+import { getAllPosts } from "@/data/posts";
 
 export default function Home() {
-  return (
-    <div>
-      <h1 className="text-3xl font-bold text-green-700 mb-4">
-        Meu Blog Pessoal
-      </h1>
-      <p className="text-lg">
-        Bem-vindo ao meu blog! Aqui está meu primeiro post:
-      </p>
+  const posts = getAllPosts();
 
-      <div className="mt-6 p-4 bg-green-100 rounded-lg">
-        <h2 className="text-xl font-semibold mb-2">
-          <Link
-            href="/posts/primeiro-post"
-            className="text-green-700 hover:underline"
-          >
-            Meu Primeiro Post
-          </Link>
-        </h2>
-        <p>Um pouco sobre minha experiência aprendendo Next.js</p>
+  return (
+    <div className="py-8">
+      <h1 className="text-4xl font-bold text-center text-green-800 mb-8">
+        Blog de Desenvolvimento
+      </h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {posts.map((post) => (
+          <PostCard key={post.id} post={post} />
+        ))}
       </div>
     </div>
   );

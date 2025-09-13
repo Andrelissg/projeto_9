@@ -1,14 +1,9 @@
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header"; // ADICIONE ESTA LINHA
+import Header from "@/components/Header";
+import { ThemeProvider } from "next-themes";
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Meu Blog",
-  description: "Um blog simples",
-};
 
 export default function RootLayout({
   children,
@@ -16,10 +11,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" suppressHydrationWarning>
       <body className={inter.className}>
-        <Header /> {/* ADICIONEI ESTA LINHA */}
-        <main className="container mx-auto p-4">{children}</main>
+        <ThemeProvider attribute="class">
+          <Header />
+          <main className="container">{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   );
