@@ -2,13 +2,7 @@ import Link from "next/link";
 import { Calendar, User } from "lucide-react";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
-
-interface Post {
-  id: number;
-  title: string;
-  excerpt: string;
-  date: string;
-}
+import { Post } from "@/lib/constants";
 
 export default function PostCard({ post }: { post: Post }) {
   return (
@@ -28,7 +22,7 @@ export default function PostCard({ post }: { post: Post }) {
         <div className="flex items-center justify-between text-sm text-gray-500">
           <div className="flex items-center space-x-2">
             <User size={16} />
-            <span>Andrelis</span>
+            <span>{post.author}</span>
           </div>
           <div className="flex items-center space-x-2">
             <Calendar size={16} />

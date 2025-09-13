@@ -3,11 +3,12 @@ import { Calendar, User, ArrowLeft } from "lucide-react";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import Link from "next/link";
+import { getPostById } from "@/data/posts";
+import { BLOG_CONFIG } from "@/lib/constants";
 
-// Conteúdo real dos posts
-const posts = {
+// Conteúdo dos posts (agora separado dos metadados)
+const postContent = {
   1: {
-    title: "Como Iniciar no Desenvolvimento Web",
     content: `Se você está começando sua jornada no desenvolvimento web, pode se sentir sobrecarregada com a quantidade de tecnologias disponíveis. Neste post, vou compartilhar um roteiro simples para iniciantes.
 
 ## Por Onde Começar?
@@ -24,11 +25,8 @@ const posts = {
 - Não tenha medo de cometer erros
 
 Lembre-se: toda desenvolvedora experiente já foi iniciante um dia!`,
-    date: "2025-09-15",
-    author: "Andrelis",
   },
   2: {
-    title: "Next.js: Por Onde Começar",
     content: `Next.js tem se tornado uma ferramenta essencial para desenvolvedores React. Aqui está um guia rápido para começar.
 
 ## Vantagens do Next.js:
@@ -47,15 +45,15 @@ npm run dev
 \`\`\`
 
 É realmente simples começar!`,
-    date: "2025-09-10",
-    author: "Andrelis",
   },
-};
+} as const;
 
 export default function PostPage({ params }: { params: { id: string } }) {
-  const post = posts[params.id as keyof typeof posts];
+  const postId = parseInt(params.id);
+  const post = getPostById(postId);
+  const content = postContent[postId as keyof typeof postContent];
 
-  if (!post) {
+  if (!post || !content) {
     return (
       <div className="max-w-4xl mx-auto py-8 px-4 text-center">
         <h1 className="text-2xl text-green-800 mb-4">Post não encontrado</h1>
@@ -96,14 +94,14 @@ export default function PostPage({ params }: { params: { id: string } }) {
       </header>
 
       <div className="prose prose-lg max-w-none mb-8">
-        {post.content.split("\n\n").map((paragraph, index) => (
+        {content.content.split("\n\n").map((paragraph, index) => (
           <p key={index} className="text-gray-700 leading-relaxed mb-4">
             {paragraph}
           </p>
         ))}
       </div>
 
-      <LikeButton postId={parseInt(params.id)} />
+      <LikeButton postId={postId} />
     </article>
   );
 }

@@ -1,4 +1,5 @@
 import { Mail, Github, Linkedin, BookOpen } from "lucide-react";
+import { BLOG_CONFIG } from "@/lib/constants";
 
 export default function About() {
   return (
@@ -14,17 +15,15 @@ export default function About() {
           </div>
           <div>
             <h2 className="text-2xl font-semibold text-green-800 mb-2">
-              Blog de Desenvolvimento - Andrelis
+              {BLOG_CONFIG.blogInfo.title}
             </h2>
-            <p className="text-green-600">
-              Compartilhando conhecimento em programação
-            </p>
+            <p className="text-green-600">{BLOG_CONFIG.blogInfo.description}</p>
           </div>
         </div>
 
         <div className="prose prose-lg">
           <p className="text-gray-700 mb-4">
-            Este blog foi criado como parte de um projeto do curso de
+            Este blog foi criado como parte de um projeto do curso
             Desenvolvimento de Software para demonstrar o uso de Next.js, React
             e modernas práticas de desenvolvimento web.
           </p>
@@ -45,21 +44,21 @@ export default function About() {
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <a
-            href="mailto:contato@blog.com"
+            href={`mailto:${BLOG_CONFIG.author.email}`}
             className="flex items-center text-green-600 hover:text-green-800 transition-colors"
           >
             <Mail size={20} className="mr-2" />
             Email
           </a>
           <a
-            href="https://github.com/Andrelissg/projeto_9"
+            href={BLOG_CONFIG.author.social.github}
             className="flex items-center text-green-600 hover:text-green-800 transition-colors"
           >
             <Github size={20} className="mr-2" />
             GitHub
           </a>
           <a
-            href="https://linkedin.com"
+            href={BLOG_CONFIG.author.social.linkedin}
             className="flex items-center text-green-600 hover:text-green-800 transition-colors"
           >
             <Linkedin size={20} className="mr-2" />
