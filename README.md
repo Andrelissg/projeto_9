@@ -33,3 +33,8 @@
 npm install
 npm run dev
 ```
+
+npm install next@15.5.2 react@18.2.0 react-dom@18.2.0
+npm install typescript @types/react @types/node
+npm install tailwindcss postcss autoprefixer
+npm install lucide-react date-fns
