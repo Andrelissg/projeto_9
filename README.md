@@ -1,3 +1,57 @@
+🎯 O que foi feito?
+Um blog pessoal moderno usando tecnologias atuais do mercado.
+
+🛠️ Ferramentas Usadas:
+
+1. Next.js - 🏗️ "O Construtor"
+   O que é: Framework para sites React (como uma "fábrica" de sites)
+
+Para que serve: Criar páginas rápidas e organizadas
+
+Como usei: Para fazer a estrutura completa do blog
+
+2. TypeScript - 📝 "O Organizador"
+   O que é: JavaScript com "regras" para evitar erros
+
+Para que serve: Deixar o código mais seguro e fácil de entender
+
+Como usei: Para tipar todas as variáveis e funções
+
+3. Tailwind CSS - 🎨 "O Estilista"
+   O que é: Biblioteca de estilos prontos
+
+Para que serve: Estilizar o site sem escrever CSS manual
+
+Como usei: Para deixar o blog bonito e responsivo
+
+4. React - ⚡ "O Interativo"
+   O que é: Biblioteca para interfaces dinâmicas
+
+Para que serve: Criar partes que se atualizam sozinhas
+
+Como usei: No botão de curtir e componentes
+
+5. Lucide Icons - 🔷 "Os Ícones"
+   O que é: Conjunto de ícones bonitos
+
+Para que serve: Decorar e melhorar a interface
+
+Como usei: Nos botões e seções do blog
+
+🔄 Como tudo funciona junto:
+🏗️ Next.js é a base (a casa)
+
+📐TypeScript organiza tudo (as plantas da casa)
+
+🎨 Tailwind decora (a pintura e móveis)
+
+🔌 React adiciona interatividade (interruptores que funcionam)
+
+🖼️ Ícones são os detalhes finais (quadros e decorações)
+
+✅ Resultado Final:
+Um blog completo, rápido e moderno que atende todos os requisitos do trabalh
+
 # 🚀 Blog Pessoal - Next.js
 
 <div align="center">
@@ -44,4 +98,4 @@ npm install lucide-react date-fns
 ```
 
 <div align="center">
-Feito com ❤️ por Andrelis
+Feito com ❤️ e 🛠️ por Andrelis
